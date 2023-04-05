@@ -22,7 +22,7 @@
 		<input type="hidden" name="save" value="save">
 
 		<div class="form-container">
-			<h1 class="form-title"><?= _("Editing Database") ?></h1>
+			<h1 class="form-title"><?= _("Edit Database") ?></h1>
 			<?php show_alert_message($_SESSION); ?>
 			<div class="u-mb10">
 				<label for="v_database" class="form-label"><?= _("Database") ?></label>
@@ -40,7 +40,7 @@
 			<div class="u-mb10">
 				<label for="v_password" class="form-label">
 					<?= _("Password") ?>
-					<button type="button" title="<?= _("generate") ?>" class="u-unstyled-button u-ml5 js-generate-password">
+					<button type="button" title="<?= _("Generate") ?>" class="u-unstyled-button u-ml5 js-generate-password">
 						<i class="fas fa-arrows-rotate icon-green"></i>
 					</button>
 				</label>
