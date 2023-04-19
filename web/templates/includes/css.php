@@ -1,5 +1,19 @@
+<?php if(!empty($_SESSION['LOGO_LOGIN'])){
+	$root=str_replace('/templates/includes','',__DIR__);
+	$image = getimagesize($root.'/'.$_SESSION['LOGO_LOGIN']);
+	?>
+	<link rel="alternate icon" href="<?=$_SESSION['LOGO_LOGIN']?>" type="<?=$image['mime'];?>">
+	<link rel="icon" href="<?=$_SESSION['LOGO_LOGIN']?>" type="<?=$image['mime'];?>">
+
+	<?php
+}else{
+	# Display Hestia default
+?>
 <link rel="alternate icon" href="/images/favicon.png" type="image/png">
 <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<?php
+}
+?>
 <link rel="stylesheet" href="/css/themes/default.min.css?<?= JS_LATEST_UPDATE ?>">
 
 <?php
