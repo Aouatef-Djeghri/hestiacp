@@ -8,14 +8,14 @@ if (!empty($_SESSION["WEBMAIL_ALIAS"])) {
 <div class="toolbar">
 	<div class="toolbar-inner">
 		<div class="toolbar-buttons">
-			<a class="button button-secondary" id="btn-back" href="/list/mail/">
+			<a class="button button-secondary button-back js-button-back" href="/list/mail/">
 				<i class="fas fa-arrow-left icon-blue"></i><?= _("Back") ?>
 			</a>
 			<?php if ($read_only !== "true") { ?>
-				<a href="/add/mail/?domain=<?= htmlentities($_GET["domain"]) ?>" class="button button-secondary" id="btn-create">
+				<a href="/add/mail/?domain=<?= htmlentities($_GET["domain"]) ?>" class="button button-secondary js-button-create">
 					<i class="fas fa-circle-plus icon-green"></i><?= _("Add Mail Account") ?>
 				</a>
-				<a href="/edit/mail/?domain=<?= htmlentities($_GET["domain"]) ?>" class="button button-secondary" id="btn-create">
+				<a href="/edit/mail/?domain=<?= htmlentities($_GET["domain"]) ?>" class="button button-secondary js-button-create">
 					<i class="fas fa-pencil icon-blue"></i><?= _("Edit Mail Domain") ?>
 				</a>
 			<?php } ?>
@@ -190,7 +190,7 @@ if (!empty($_SESSION["WEBMAIL_ALIAS"])) {
 				</div>
 
 				<div class="clearfix l-unit__stat-col--left u-text-center compact"><b><?= humanize_usage_size($data[$key]["U_DISK"]) ?></b> <span class="u-text-small"><?= humanize_usage_measure($data[$key]["U_DISK"]) ?></span></div>
-				<div class="clearfix l-unit__stat-col--left u-text-center"><b><?= _(humanize_usage_size($data[$key]["QUOTA"])) ?></b> <span class="u-text-small"><?= _(humanize_usage_measure($data[$key]["QUOTA"])) ?></span></div>
+				<div class="clearfix l-unit__stat-col--left u-text-center"><b><?=humanize_usage_size($data[$key]["QUOTA"]) ?></b> <span class="u-text-small"><?= humanize_usage_measure($data[$key]["QUOTA"]) ?></span></div>
 				<div class="clearfix l-unit__stat-col--left u-text-center">
 					<i class="fas <?= $alias_icon ?>"></i>
 				</div>
